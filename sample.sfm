@@ -1,0 +1,19 @@
+\ge English gloss
+\lx lexical entry
+\pr a pr field
+\df a definition field
+\va a variant
+\co a comment?
+\co1 a second comment?
+\va_pr a pr variant
+\va a second variant in the first list
+\xxx a field not in the list
+
+\ge English gloss #2
+\lx lexical entry #2
+\pr a pr field #2
+\df a definition field #2
+\co a comment? missing co1 #2
+\xxx another field not in the list
+\va a variant #2
+\va_pr a pr variant #2
