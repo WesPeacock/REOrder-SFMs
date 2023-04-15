@@ -79,16 +79,19 @@ my @orderarray = split /,/ , $neworder;
 say STDERR "order array:", Dumper(@orderarray) if $debug;
 for my $oplline (@opledfile_in) {
 	my $newoplline = "";
-	for my $mark (reverse @orderarray) { # fields are moved to the front in reverse order
+	for my $mark (reverse @orderarray) {
+		# fields are moved group by group to the front in reverse order
+		my $grp = "";
 		say STDERR "for mark= >$mark<" if $debug;
 		say STDERR "before oplline= >$oplline<" if $debug;
 		say STDERR "before newoplline= >$newoplline<" if $debug;
 		say STDERR "look for \\$mark .*?$eolrep" if $debug;
 		while ($oplline =~ m/\\$mark .*?$eolrep/) {
 			say STDERR "Found:$MATCH" if $debug;
-			$newoplline = $MATCH . $newoplline;
+			$grp = $grp . $MATCH; # Group all the same markers together
 			$oplline = $PREMATCH . $POSTMATCH;
 			}
+		$newoplline = $grp . $newoplline;
 		say STDERR "after oplline= >$oplline<" if $debug;
 		say STDERR "after newoplline= >$newoplline<" if $debug;
 		}
