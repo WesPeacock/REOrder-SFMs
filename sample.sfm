@@ -17,3 +17,11 @@
 \xxx another field not in the list
 \va a variant #2
 \va_pr a pr variant #2
+
+\ge English gloss #3
+\va a variant #3
+\yyy also not in the list #3
+\co a comment? missing co1 #3
+\xxx still another field not in the list #3
+\lx lexical entry #3
+\va_pr a pr variant #3
